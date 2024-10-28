@@ -17,8 +17,6 @@ const phrases = [
 
 // Event listener for the start button.
 //      Hides the overlay div.
-
-
 startButton.addEventListener("click", (e) => {
     let overlay = document.querySelector("#overlay");
     overlay.style.display = "none";
@@ -29,6 +27,8 @@ function getRandomPhraseAsArray(arr){
     let randomNumber = Math.floor(Math.random() * 6);
     return arr[randomNumber];
 } 
+
+
 
 // Function that adds phrase to the display.
 function addPhraseToDisplay(arr) {
@@ -48,9 +48,69 @@ function addPhraseToDisplay(arr) {
 }
 
 const phraseArray = getRandomPhraseAsArray(phrases);
-addPhraseToDisplay(phraseArray);
 console.log(phraseArray);
+addPhraseToDisplay(phraseArray);
 
+const checkLetter = button => {
+    let item = list.children;
+       
+    for(let i = 0; i < item.length; i++) {
+        let letter = item[i].textContent;
+        if(button === letter) {
+            console.log("match");
+            let letterFound = button;
+            item[i].className = item[i].className + " show";
+            return letterFound;    
+        } else {
+            return null;      /* CHECK HERE: This function returns always null*/
+        }
+     } 
+};
+
+qwerty.addEventListener("click", e => {
+    e.preventDefault();
+    if(e.target.tagName === 'BUTTON') {
+        let button = e.target.textContent;
+        e.target.disabled = true;  
+        e.target.className = 'chosen';
+        console.log(checkLetter(button));  
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 qwerty.addEventListener("click", (e) => {
         let letter = e.target.textContent;
@@ -85,4 +145,4 @@ let checkLetter = (letter) => {
             return letterMatched;  
         } 
     } return null;
-}; 
+}; */
