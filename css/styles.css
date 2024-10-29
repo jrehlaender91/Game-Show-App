@@ -20,6 +20,8 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -27,6 +29,12 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+}
+
+h3 {
+  margin-top: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 li, ol, ul {
@@ -38,6 +46,7 @@ h2 {
   margin: 0;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   font-size: var(--font-size-large);
   margin: 0;
 }
@@ -111,12 +120,23 @@ button {
   color: #FFFFFF;
 }
 
-.btn__reset {
+.btn__start {
   padding: 8px;
-  margin: 50px auto;
+  margin: 50px auto 10px;
+  display: inline;
   background: #FFFFFF;
   border-radius: 5px;
   font-size: var(--font-size-medium);
+}
+
+.btn__reset {
+  padding: 8px;
+  margin: 10px auto 0px;
+  display: inline;
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  display: none;
 }
 
 /* Overlay */
@@ -133,6 +153,8 @@ button {
   right: 0;
   border-radius: 5px;
 }
+
+
 
 .title {
   color: #FFF;
